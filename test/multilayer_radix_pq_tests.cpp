@@ -119,6 +119,18 @@ TEST(mlrpqTest, QueueReturnsCorrectArray){
 
 }
 
+// manpen: Consider using Typed Tests (https://github.com/google/googletest/blob/master/googletest/docs/AdvancedGuide.md#typed-tests)
+// to reduce code redudancy
+
+// manpen: Generate test values "on-the-fly" (e.g. with std::random) and
+// insert A LOT more values (>> 1e6)
+
+// manpen: Test intermixed insertion/deletions on large random data
+// e.g. throw a dice how many elements you want to insert (lets say [1: n/10])
+// where n is the number of elements contained and then insert random data
+// then do the same for deletions and repeat; at some point stop and pop all
+// remaining elements
+
 TEST(mlrpqTest, QueuesDifferentRadixReturnSameArray){
     multilayer_radix_pq::multilayer_radix_pq<uint64_t, int, 3> mlrpq3;
     multilayer_radix_pq::multilayer_radix_pq<uint64_t, int, 6> mlrpq6;
